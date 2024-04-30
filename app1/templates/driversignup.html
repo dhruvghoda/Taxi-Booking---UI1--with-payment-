@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <!--==============================Content=================================-->
+			<div class="content">
+				<div class="container_12">
+					<div class="grid_12">
+						<h3>Driver Registration</h3>
+						<form id="bookingForm" method="post">
+							{% csrf_token %}
+							<div class="clear"></div>
+							<div class="tmTextarea">
+                                <input
+                                type="text"
+                                name="name"
+                                placeholder="Name" />&nbsp;
+
+                                <input
+                                type="text"
+                                name="badge_number"
+                                placeholder="Badge Number"  required/>&nbsp;
+
+                              <input
+                                type="email"
+                                name="email"
+                                placeholder="E-mail" required/>&nbsp;
+
+                              <input
+                                type="number"
+                                name="mobile"
+                                placeholder="Contact Number" required/>&nbsp;
+
+                              <input
+                                type="password"
+                                name="password"
+                                placeholder="Password" required/>&nbsp;
+
+                            </div>
+
+							<center>
+								<button type="submit" class="btn btn-warning">Signup</button>
+							</center>
+						</form>
+							<a href="/driversignin/" class="text-dark">Driver Login?</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+
+{% endblock %}

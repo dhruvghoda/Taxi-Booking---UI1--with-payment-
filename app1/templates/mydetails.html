@@ -1,0 +1,48 @@
+{% extends 'driver_base.html' %}
+{% load static %}
+{% block body %}
+
+
+<div class="content">
+				<div class="container_12">
+					<div class="grid_12">
+
+                      <div class="card text-center">
+                          <div class="card-header">My Details</div>
+                          <div class="card-body">
+                          <h5 class="card-title">
+                              Email - {{driver.email }}<br>
+                              Name - {{ driver.name }}<br>
+                              Password - {{ driver.password }}<br>
+                              Mobile - {{ driver.mobile }}<br>
+                              Badge Number - {{ driver.badge_number }}<br>
+                          </h5>
+                          </div>
+                      </div>
+
+                      <div class="card text-center mt-4">
+                          <div class="card-header">Taxi Details</div>
+                          <div class="card-body">
+                          <h5 class="card-title">
+                              Taxi No - {{ taxi.taxi_no }}<br>
+                              Taxi Price - {{ taxi.price }}<br>
+                              Taxi Source Point - {{ taxi.source }}<br>
+                              Taxi Destination Point - {{ taxi.destination }}<br>
+                              Taxi Driver Name - {{ taxi.driver.name }}<br>
+                              Taxi Driver No. - {{ taxi.driver.mobile }}<br>
+                              {% if taxi.is_accepted %}
+                                Taxi Booked - <h5 class="text-success">Yes</h5>
+                              {% else %}
+                                Taxi Booked - <h5 class="text-danger">No</h5>
+                              {% endif %}
+                          </h5>
+
+                          </div>
+                      </div>
+
+                    </div>
+                </div>
+</div>
+
+
+{% endblock %}

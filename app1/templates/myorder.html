@@ -1,0 +1,52 @@
+{% extends 'customer_base.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="container mt-5">
+      <div class="card col-md-6 m-auto p-5 bg-light">
+
+        <div class="text-center">
+          Username - {{ user.name }}<br>
+          Email - <i class="text-primary">{{ user.email }}</i><br>
+          Mobile - {{ user.mobile }}<br>
+        </div>
+
+      </div>
+      <div class="mt-5">
+        <div class="card col-md-6 m-auto p-5 bg-light">
+          {% if 'No data' != model %}
+          <div class="text-center">
+            Taxi - {{ model.taxi.taxi_no }}<br>
+            Taxi Approved - {% if model.taxi.is_accepted %} <i class="text-success">Yes</i> {% else %} <i class="text-danger">No</i> {% endif %} <br>
+            Driver Name - {{ model.taxi.driver.name }} <br>
+            Driver Mobile - <i class="text-primary"> {{ model.taxi.driver.mobile }} </i> <br>
+            Taxi Price - {{ model.taxi.price }} <br>
+
+          </div>
+
+          {% if model.taxi.is_accepted  %}
+          <div class="text-center mt-5">
+            <form method="post">
+              {% csrf_token %}
+              <input
+                type="text"
+                class="inputclass"
+                value="{{ i.taxi.taxi_no }}"
+                name="taxi_no"
+                hidden />
+              <button type="submit" class="btn btn-success">
+                TRIP COMPLETE
+              </button>
+            </form>
+          </div>
+          {% else %}
+          <div class="text-center  mt-3 text-danger">Not Accepted</div>
+          {% endif %}
+          {% else %}
+          <div class="text-center  mt-3 text-danger"><h2>No Request</h2></div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

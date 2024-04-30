@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <!--==============================Content=================================-->
+			<div class="content">
+				<div class="container_12">
+					<div class="grid_12">
+						<h3>Customer Registration</h3>
+						<form id="bookingForm" method="post">
+							{% csrf_token %}
+							<div class="clear"></div>
+							<div class="tmTextarea">
+                                <input
+                                type="text"
+                                name="name"
+                                placeholder="Name"  required/>&nbsp;
+
+                              <input
+                                type="email"
+                                name="email"
+                                placeholder="E-mail" required/>&nbsp;
+
+                              <input
+                                type="number"
+                                name="mobile"
+                                placeholder="Contact Number" required/>&nbsp;
+
+                              <input
+                                type="password"
+                                name="password"
+                                placeholder="Password" required/>&nbsp;
+
+                              <input
+                                type="text"
+                                name="city"
+                                placeholder="City" required/>&nbsp;
+
+
+                              <input
+                                type="text"
+                                name="country"
+                                placeholder="Country" required/>&nbsp;
+
+
+                              <input
+                                type="text"
+                                name="pincode"
+                                placeholder="Enter Your pincode" required/>
+                            </div>
+
+							<center>
+								<button type="submit" class="btn btn-warning">Signup</button>
+							</center>
+						</form>
+							<a href="/signin/" class="text-dark">Login Here?</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+
+{% endblock %}

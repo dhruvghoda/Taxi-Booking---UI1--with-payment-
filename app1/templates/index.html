@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+			<div class="slider_wrapper ">
+				<div id="camera_wrap" class="">
+					<div data-src="{% static 'images/slide.jpg' %}" ></div>
+					<div data-src="{% static 'images/slide1.jpg' %}" ></div>
+					<div data-src="{% static 'images/slide2.jpg' %}"></div>
+				</div>
+			</div>
+			<div class="container_12">
+				<div class="grid_4">
+					<div class="banner">
+						<div class="maxheight">
+							<div class="banner_title">
+								<img src="{% static 'images/icon1.png' %}" alt="">
+								<div class="extra_wrapper">Fast&amp;
+									<div class="color1">Safe</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="grid_4">
+					<div class="banner">
+						<div class="maxheight">
+							<div class="banner_title">
+								<img src="{% static 'images/icon2.png' %}" alt="">
+								<div class="extra_wrapper">Best
+									<div class="color1">Prices</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="grid_4">
+					<div class="banner">
+						<div class="maxheight">
+							<div class="banner_title">
+								<img src="{% static 'images/icon3.png' %}" alt="">
+								<div class="extra_wrapper">Package
+									<div class="color1">Delivery</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="c_phone">
+				<div class="container_12">
+					<div class="grid_12">
+						<div class="fa fa-phone"></div>+ 1800 559 6580
+						<span>ORDER NOW!</span>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+{% endblock %}

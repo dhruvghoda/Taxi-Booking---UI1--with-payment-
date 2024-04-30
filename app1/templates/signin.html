@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <!--==============================Content=================================-->
+			<div class="content">
+				<div class="container_12">
+					<div class="grid_12">
+						<h3>Customer Login</h3>
+						<form id="bookingForm" method="post">
+							{% csrf_token %}
+							<div class="clear"></div>
+							<div class="tmTextarea">
+								<input type="email" name="email" placeholder="E-mail" data-constraints="@NotEmpty @Required @Email" required />&nbsp;
+								<input type="password" name="password" placeholder="Password" data-constraints="@NotEmpty @Required" required />
+							</div>
+							<center>
+								<button type="submit" class="btn btn-warning">Login</button>
+							</center>
+						</form>
+							<a href="/signup/" class="text-dark">Register Here?</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+
+{% endblock %}

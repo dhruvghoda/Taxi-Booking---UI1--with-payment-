@@ -1,0 +1,38 @@
+{% extends 'driver_base.html' %}
+{% load static %}
+{% block body %}
+
+      <div class="mt-5">
+        <div class="card col-md-6 m-auto p-5 bg-light">
+          {% if 'No data' != model %}
+          <div class="text-center">
+            Taxi No - {{ model.taxi.taxi_no }} <br>
+            Username - {{ model.user.name }} <br>
+            User Email - {{ model.user.email }} <br>
+            Driver Name - {{ model.taxi.driver.name }} <br>
+            Driver Email - {{ model.taxi.driver.email }} <br>
+            Driver Mobile - {{ model.taxi.driver.mobile }} <br>
+            Booking On - {{ model.booked_time }} <br>
+          </div>
+
+          <div class="text-center mt-5">
+            <form method="post">
+              {% csrf_token %}
+              <input
+                type="text"
+                class="inputclass"
+                value="{{ model.taxi }}"
+                name="taxi_no"
+                hidden />
+              <button type="submit" class="btn btn-outline-success">
+                Approve
+              </button>
+            </form>
+          </div>
+          {% else %}
+          <div class="text-danger text-center"><h2>No Request</h2></div>
+          {% endif %}
+        </div>
+      </div>
+
+{% endblock %}
