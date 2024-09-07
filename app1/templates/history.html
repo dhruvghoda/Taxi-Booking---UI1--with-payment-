@@ -43,7 +43,7 @@
                                 <th>Taxi Source Point</th>
                                 <th>Taxi Destination Point</th>
                                 <th>Taxi Driver</th>
-                                <th>Taxi Driver</th>
+                                <th>Date</th>
                                 <th>Taxi User</th>
                               </tr>
                             </thead>
@@ -55,7 +55,7 @@
                                 <td>{{ i.taxi.source }}</td>
                                 <td>{{ i.taxi.destination }}</td>
                                 <td>{{ i.taxi.driver.name }}</td>
-                                <td>{{ i.taxi.driver.mobile }}</td>
+                                <td>{{ i.booked }}</td>
                                 <!-- <td>
                                   {% if i.taxi.is_accepted == True %}
                                   <i class="fa fa-check fa-fw text-success">Booked</i>
